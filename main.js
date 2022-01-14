@@ -214,6 +214,15 @@ calculateDogAge(1); //Your doggie is 7 years old in dog years!
 calculateDogAge(0.5); //Your doggie is 3.5 years old in dog years!
 calculateDogAge(12); //Your doggie is 84 years old in dog years!
 =========================================================== */
+const calculateDogAge = function(age) {
+  let puppyAge = age * 7;
+  console.log(`Your doggie is ${puppyAge} years pld in doy years !`);
+}
+
+calculateDogAge(1); 
+calculateDogAge(0.5); 
+calculateDogAge(12);
+
 
 /* ===========================================================
 /* ===================== Question 10 =========================
@@ -228,6 +237,20 @@ isPangram('abcdefghijklmnopqrstuvwxyz'); //true
 isPangram('the quick brown fox jumps over the lazy dog') //true
 isPangram('five boxing wizards jump quickly at it'); //false
 =========================================================== */
+const letter = "abcdefghijklmnopqrstuvwxyz";
+const isPangram = function(pangram) {
+  if(pangram.includes(letter)) {
+    return true
+  }else{
+    return false
+  }
+}
+
+console.log(isPangram('abcdefghijklmnopqrstuvwxyz')); //true
+console.log(isPangram('the quick brown fox jumps over the lazy dog')); //true
+console.log(isPangram('five boxing wizards jump quickly at it')); //false
+
+
 
 /* ===========================================================
 /* ===================== Question 11 =========================
@@ -238,6 +261,12 @@ in that array.
 
 // evens([1, 2, 3, 4, 5, 6, 7, 8]);
 =========================================================== */
+const evens = function(even) {
+  return even.filter(v => v % 2 === 0);
+}
+
+console.log(evens([1, 2, 3, 4, 5, 6, 7, 8]));
+
 
 /* ===========================================================
 /* ===================== Question 12 =========================
@@ -248,3 +277,9 @@ returns the *largest* number in the array.
 max([1, 5, 10, 15]); //15
 max([99, 0, -1, 45]); //99
 =========================================================== */
+const max = function(arr) {
+  return Math.max.apply(null, arr);
+}
+
+console.log(max([1, 5, 10, 15]));
+console.log(max([99, 0, -1, 45]));
