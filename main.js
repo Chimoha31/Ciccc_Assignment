@@ -237,27 +237,35 @@ isPangram('abcdefghijklmnopqrstuvwxyz'); //true
 isPangram('the quick brown fox jumps over the lazy dog') //true
 isPangram('five boxing wizards jump quickly at it'); //false
 =========================================================== */
-let usedChars = [];
-const alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+let alphabet = "abcdefghijklmnopqrstuvwxyz";
+
 const isPangram = function(pangram) {
+  let alphabetArry = [];
   for(let i = 0; i < alphabet.length; i++) {
-    for(let j = 0; j < pangram.length; j++) {
-      if(alphabet[i].includes(pangram[j])){
-        if(usedChars.includes(alphabet[i]) == false){
-          usedChars.push(alphabet[i]);
+    for(let j = 0; j < pangram.length; j++){
+      if(alphabet[i].includes(pangram[j])) {
+        if(alphabetArry.includes(alphabet[i]) == false) {
+          alphabetArry.push(alphabet[i]);
         }
       }
     }
   }
-  console.log(alphabet.length);
-  if(usedChars.length == alphabet.length) {
+  // console.log(alphabetArry);
+  if(alphabetArry.length == alphabet.length) {
     return true;
+  } else {
+    return false;
   }
-  return false;
 }
 
+// isPangram('abcdefghijklmnopqrstuvwxyz');
 console.log(isPangram('abcdefghijklmnopqrstuvwxyz')); //true
+
+// isPangram('the quick brown fox jumps over the lazy dog');
 console.log(isPangram('the quick brown fox jumps over the lazy dog')); //true
+
+// isPangram('five boxing wizards jump quickly at it'); 
 console.log(isPangram('five boxing wizards jump quickly at it')); //false
 
 
