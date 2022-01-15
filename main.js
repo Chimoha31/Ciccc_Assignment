@@ -237,13 +237,23 @@ isPangram('abcdefghijklmnopqrstuvwxyz'); //true
 isPangram('the quick brown fox jumps over the lazy dog') //true
 isPangram('five boxing wizards jump quickly at it'); //false
 =========================================================== */
-const letter = "abcdefghijklmnopqrstuvwxyz";
+let usedChars = [];
+const alphabet = "abcdefghijklmnopqrstuvwxyz";
 const isPangram = function(pangram) {
-  if(pangram.includes(letter)) {
-    return true
-  }else{
-    return false
+  for(let i = 0; i < alphabet.length; i++) {
+    for(let j = 0; j < pangram.length; j++) {
+      if(alphabet[i].includes(pangram[j])){
+        if(usedChars.includes(alphabet[i]) == false){
+          usedChars.push(alphabet[i]);
+        }
+      }
+    }
   }
+  console.log(alphabet.length);
+  if(usedChars.length == alphabet.length) {
+    return true;
+  }
+  return false;
 }
 
 console.log(isPangram('abcdefghijklmnopqrstuvwxyz')); //true
